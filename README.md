@@ -4,7 +4,7 @@ Welcome to my personal portfolio website!
 This project showcases my skills, projects, certifications, and contact information as a Cloud Computing student.
 
 ## 🔗 Live Site
-Visit the portfolio at: [https://nihar-gour.github.io](https://nihar-gour.github.io)
+Visit the portfolio at: [https://nihar-gour.github.io](https://nihar-droid.github.io/portfolio.github.io/)
 
 ## 🛠 Built With
 - HTML5
