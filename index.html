@@ -9,21 +9,22 @@
   </head>
   <body>
     <header class="header-with-image">
-      <img src="Profile.jpg" alt="Nihar Gour" class="header-img" />
+      <img src="profile.jpg" alt="Nihar Gour" class="header-img" />
       <div class="header-text">
         <h1>Nihar Gour</h1>
         <p>Cloud Computing Enthusiast | BE-CSE at Chandigarh University</p>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#contact">Contact</a>
-          <a href="NIHAR's Resume.pdf" target="_blank" class="resume-btn"
-            >Download Resume</a
-          >
-          <button id="theme-toggle" class="theme-toggle">🌙 Change Theme</button>
+        <nav class="navbar">
+          <div class="hamburger" id="hamburger">☰</div>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="NIHAR's Resume.pdf" target="_blank">Resume</a></li>
+          </ul>
         </nav>
+        <button id="theme-toggle" class="theme-toggle">🌙 Change Theme</button>
       </div>
     </header>
 
@@ -96,7 +97,9 @@
       <p>Phone: 08427372222</p>
       <p>Address: #308, IT City, Block-A, Sector-66-B</p>
       <div class="socials">
-        <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3B87hnAE2eT4WPUNKWvUczGw%3D%3D" target="_blank"
+        <a
+          href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3B87hnAE2eT4WPUNKWvUczGw%3D%3D"
+          target="_blank"
           >LinkedIn</a
         >
         <a href="https://leetcode.com/u/nihar_gour/" target="_blank"
@@ -110,27 +113,41 @@
       <p>© 2025 Nihar Gour</p>
     </footer>
     <script>
-        // Scroll reveal
-        const revealElements = document.querySelectorAll(".reveal");
-        const revealOnScroll = () => {
-          revealElements.forEach(el => {
-            const top = el.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            if (top < windowHeight - 100) {
-              el.classList.add("active");
-            }
-          });
-        };
-        window.addEventListener("scroll", revealOnScroll);
-        window.addEventListener("load", revealOnScroll);
-      
-        // Theme toggle
-        const toggle = document.getElementById("theme-toggle");
-        toggle.addEventListener("click", () => {
-          document.body.classList.toggle("light-mode");
-          toggle.textContent = document.body.classList.contains("light-mode") ? "🌙 Dark Mode" : "☀️ Light Mode";
+      // Scroll reveal
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealOnScroll = () => {
+        revealElements.forEach((el) => {
+          const top = el.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          if (top < windowHeight - 100) {
+            el.classList.add("active");
+          }
         });
-      </script>
-      
+      };
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("load", revealOnScroll);
+
+      // Theme toggle
+      const toggle = document.getElementById("theme-toggle");
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        toggle.textContent = document.body.classList.contains("light-mode")
+          ? "🌙 Dark Mode"
+          : "☀️ Light Mode";
+      });
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Auto-close on link click
+      document.querySelectorAll("#nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>
